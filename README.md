@@ -1,8 +1,11 @@
 # Random_Food
 Website with python backend - website generates a random food in specific category (lunch, dinner, etc) and gives all detail on how to make it
 
-Goals: user friendly website layout, website is hosted using pythonAnywhere.
+Goals: 
+
+user friendly website layout, website is hosted using pythonAnywhere.
    User is first instructed to select their type of meal (breakfast, lunch, dinner, or dessert)
+   
        Big green button that says "Generate My Meal!", once clicked does the following:
             displays picture of meal that embeds the link to its youtube video,
             displays name with country of origin,
