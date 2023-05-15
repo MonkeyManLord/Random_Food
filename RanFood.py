@@ -1,11 +1,12 @@
 import requests, json
-from time import sleep
+#from time import sleep
 #https://www.themealdb.com/api.php
 #https://www.themealdb.com/api/json/v1/1/random.php
-##add a ui aspect that has a "Open youtube" button]
-##ON THE WEBSITE - IT ALSO LINKS TO UBER EATS (or some online food service) 
-#// Let the people only click the button once
 
+#// Let the people only click the button once
+## Must re-access api to recieve a new meal
+
+#uses requests to get meal from api, calls other methods
 def get_food():
     try:
         response = requests.get('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -20,6 +21,7 @@ def get_food():
     except requests.exceptions.RequestException as e:
         print('You might not have a Wifi connection... Error:', e)
 
+#returns ingredients in: [amount][measurement] - [ingredient]
 def get_ingredients(data):
     ingredients = []
     for i in range(1, 21):
@@ -34,7 +36,7 @@ def get_ingredients(data):
                 ingredients.append(ingredient)
     return ingredients
 
-#printing for test
+#printing for test - will delete later
 def print_ingredients(ingredients):
     if ingredients:
         print("Ingredients:")
@@ -42,6 +44,8 @@ def print_ingredients(ingredients):
             print(ingredient)
     else:
         print("No ingredients found.")
+
+#! Get Functions START-------------------------------------------------------------------
 
 def get_YT(data):
     #in new tab open the ytvid when clicked
@@ -71,7 +75,7 @@ def how_make(data):
     instructions = data['meals'][0][strInstructions]
     return instructions
 
-
+#! Get Functions END-------------------------------------------------------------------
 
 
 womp = input("Can't decide what to eat? ")
